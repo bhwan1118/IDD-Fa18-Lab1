@@ -10,14 +10,17 @@ We've copied the questions from the lab here. Answer them below!
 
 ## Part A. Set Up a Breadboard
 
-
+![My image](https://github.com/bhwan1118/IDD-Fa18-Lab1/blob/master/Breadboard%20Setup.jpg)
 
 ## Part B. Manually Blink a LED
 
 **a. What color stripes are on a 100 Ohm resistor?**
  
+ From left to right: Brown, Black, Brown, Gold (this tolerance can be other colors as well)
+ 
 **b. What do you have to do to light your LED?**
 
+You must press the switch in order to light the LED.
 
 ## Part C. Blink a LED using Arduino
 
@@ -25,13 +28,23 @@ We've copied the questions from the lab here. Answer them below!
 
 **a. What line(s) of code do you need to change to make the LED blink (like, at all)?**
 
+You need to add lines : pinMode(LED_BUILTIN, OUTPUT); under setup() and then lines : digitalWrite(LED_BUILTIN, HIGH) and digitalWrite(LED_BUILTIN, LOW) to switch the LED on and off along with a set delay() to specify how light should stay on and off.
+See code snippet here: ![Lab 1 Code](google.com)
+
 **b. What line(s) of code do you need to change to change the rate of blinking?**
 
+You need to change the delay(1000) lines to vary the rate of blinking. Lowering the value in the delay() line after digitalWrite(LED_BUILTIN, LOW) will decrease the time which the LED stays off and reducing the other delay value after digitalWrite(LED_BUILTIN, HIGH) will decrease the time at which the LED stays on which in effect increases the rate at which the LED blinks.   
+
 **c. What circuit element would you want to add to protect the board and external LED?**
+
+I would add some type of resistor to reduce the amount of current that is flowing through the circuit.
  
 **d. At what delay can you no longer *perceive* the LED blinking? How can you prove to yourself that it is, in fact, still blinking?**
 
+If I set the delay() after digitalWrite(LED_BUILTIN, LOW) to around delay(1) (1 milisecond) I can no longer perecieve the LED blinking it just looks like it is continuously on. One way I can think of is by connecting some kind of voltmeter that can quickly record voltage readings. You then should hypothetically see the voltage reading drop and spike which would indicate the LED was blinking. Another thought is to get a camera that has a fast shutterspeed so that you could actually see the blink.
+
 **e. Modify the code to make your LED blink your way. Save your new blink code to your lab 1 repository, with a link on the README.md.**
+
 
 
 ### 2. Blink your LED
