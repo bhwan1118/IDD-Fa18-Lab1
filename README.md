@@ -29,7 +29,7 @@ You must press the switch in order to light the LED.
 **a. What line(s) of code do you need to change to make the LED blink (like, at all)?**
 
 You need to add lines : pinMode(LED_BUILTIN, OUTPUT); under setup() and then lines : digitalWrite(LED_BUILTIN, HIGH) and digitalWrite(LED_BUILTIN, LOW) to switch the LED on and off along with a set delay() to specify how light should stay on and off.
-See code snippet here: ![Lab 1 Code](google.com)
+See code snippet here: [Lab 1 Code](https://github.com/bhwan1118/IDD-Fa18-Lab1/blob/master/CustomBlink.ino)
 
 **b. What line(s) of code do you need to change to change the rate of blinking?**
 
@@ -45,7 +45,7 @@ If I set the delay() after digitalWrite(LED_BUILTIN, LOW) to around delay(1) (1 
 
 **e. Modify the code to make your LED blink your way. Save your new blink code to your lab 1 repository, with a link on the README.md.**
 
-Code : ![Custom Blink](https://github.com/bhwan1118/IDD-Fa18-Lab1/blob/master/CustomBlink.ino)
+Code : [Custom Blink](https://github.com/bhwan1118/IDD-Fa18-Lab1/blob/master/CustomBlink.ino)
 
 ### 2. Blink your LED
 
@@ -73,13 +73,15 @@ Upon observation, analogWrite() takes an integer argument for specifying a value
 
 ### 1. Take apart your electronic device, and draw a schematic of what is inside. 
 
+![My Image](https://github.com/bhwan1118/IDD-Fa18-Lab1/blob/master/Schematic%20Drawing.jpg)
+
 **a. Is there computation in your device? Where is it? What do you think is happening inside the "computer?"**
 
 Yes. it is towards the top of the PCB. It's doing calculations (since this is a calculator) and I think it is also sending signals for what the screen should be displaying. 
 
 **b. Are there sensors on your device? How do they work? How is the sensed information conveyed to other portions of the device?**
 
-Yes. There are pressure sensors on the front of the PCB. Each sensor corresponds to a button on the calendar and everytime it is pressed that information must be communicated as an electrical signal to the computer to be processed.
+Yes. There are pressure sensors on the front of the PCB. Each sensor corresponds to a button on the calculator and everytime it is pressed that information must be communicated as an electrical signal to the computer to be processed.
 
 **c. How is the device powered? Is there any transformation or regulation of the power? How is that done? What voltages are used throughout the system?**
 
@@ -89,10 +91,9 @@ This appears to be accomplished in a few different ways. There is a solar panel,
 
 ### 2. Using your schematic, figure out where a good point would be to hijack your device and implant an LED.
 
-**Describe what you did here.**
+Unfortunately my device no longer capable of supplying power to itself. That being said, I used the power from the microcontroller and then connected wires from my circuit to the PCB board so that power could flow through PCB board components and then back to ground in my breadboard. This allows my LED to light up when in touch with the components in the PCB. It also supplied enough power to make the calculator functional again which was an interesting bi-product. 
 
 ### 3. Build your light!
 
-**Make a video showing off your Frankenlight.**
+[Frankenlight Part 1](youtube.com)
 
-**Include any schematics or photos in your lab write-up.**
