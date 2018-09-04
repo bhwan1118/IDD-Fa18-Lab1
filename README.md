@@ -45,26 +45,29 @@ If I set the delay() after digitalWrite(LED_BUILTIN, LOW) to around delay(1) (1 
 
 **e. Modify the code to make your LED blink your way. Save your new blink code to your lab 1 repository, with a link on the README.md.**
 
-
+Code : ![Custom Blink](https://github.com/bhwan1118/IDD-Fa18-Lab1/blob/master/CustomBlink.ino)
 
 ### 2. Blink your LED
 
 **Make a video of your LED blinking, and add it to your lab submission.**
 
-[link to your video here; feel free to upload to youtube and just paste in a link here]
-
+[YouTube Demo](https://youtu.be/2N3m1axUkBE)
 
 ## Part D. Manually fade an LED
 
 **a. Are you able to get the LED to glow the whole turning range of the potentiometer? Why or why not?**
 
+Yes I am able to get the LED to glow the whole range. When you turn the potentiometer you are varying the resistance between 0 Ohms to 10k Ohms. Since this is a circuit with a resistor in series, the total resistance of the circuit is simply the sum of the potentiometer value and the 220 Ohm resistor that is listed. Since this is the case the max brightness of the LED will occur when the potentiometer is at 0 (most current flowing through the circuit) and be the dimmest when the potentiometer is at its max value. At the potentiometer's max value there is still enough current to provide the needed voltage to power the LED thus you can utilize the whole range of the potentiometer.
 
 ## Part E. Fade an LED using Arduino
 
 **a. What do you have to modify to make the code control the circuit you've built on your breadboard?**
 
+In this case the only parameter that needed changing was the variable led needed to be set to 11 to correspond to the value of the pin powering the LED in this circuit.
+
 **b. What is analogWrite()? How is that different than digitalWrite()?**
 
+Upon observation, analogWrite() takes an integer argument for specifying a value to write to a specified pin, whereas digitalWrite() can only take the binary values: High/Low. According to Arduino reference online, this is accomplished by a pulse width modulation wave actually uses an analog signal (as specified by code) to vary the voltage being supplied to a pin.
 
 ## Part F. FRANKENLIGHT!!!
 
@@ -72,9 +75,15 @@ If I set the delay() after digitalWrite(LED_BUILTIN, LOW) to around delay(1) (1 
 
 **a. Is there computation in your device? Where is it? What do you think is happening inside the "computer?"**
 
+Yes. it is towards the top of the PCB. It's doing calculations (since this is a calculator) and I think it is also sending signals for what the screen should be displaying. 
+
 **b. Are there sensors on your device? How do they work? How is the sensed information conveyed to other portions of the device?**
 
+Yes. There are pressure sensors on the front of the PCB. Each sensor corresponds to a button on the calendar and everytime it is pressed that information must be communicated as an electrical signal to the computer to be processed.
+
 **c. How is the device powered? Is there any transformation or regulation of the power? How is that done? What voltages are used throughout the system?**
+
+This appears to be accomplished in a few different ways. There is a solar panel, a big capacitor, and a battery. Power probably flows in and out of these components and is also regulated by resistors and diodes that are on the board.
 
 **d. Is information stored in your device? Where? How?**
 
